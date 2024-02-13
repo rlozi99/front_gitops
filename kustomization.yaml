@@ -8,4 +8,4 @@ resources:
 images:
 - name: goodacr.azurecr.io/kwujio/front
   newName: goodacr.azurecr.io/kwujio/front
-  newTag: latest
+  newTag: v1.010
