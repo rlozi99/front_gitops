@@ -9,3 +9,6 @@ images:
 - name: goodacr.azurecr.io/kwujio/front
   newName: goodacr.azurecr.io/kwujio/front
   newTag: v1.0.Beta13
+- name: goodbirdacr.azurecr.io/medicine/front
+  newName: goodbirdacr.azurecr.io/medicine/front
+  newTag: v1.0.Beta6
