@@ -11,11 +11,6 @@ spec:
       app: front-end
   template:
     metadata:
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9113"
-        prometheus.io/scheme: http
-        prometheus.io/path: /metrics
       labels:
         app: front-end
     spec:
