@@ -21,8 +21,5 @@ spec:
     spec:
       containers:
       ports:
-      - containerPort: 9113
-          name: metrics
-          protocol: TCP
       - name: front-end
         image: goodbirdacr.azurecr.io/medicine/front:latest
