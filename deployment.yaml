@@ -20,6 +20,5 @@ spec:
         app: front-end
     spec:
       containers:
-      ports:
       - name: front-end
         image: goodbirdacr.azurecr.io/medicine/front:latest
