@@ -22,3 +22,8 @@ spec:
       containers:
       - name: front-end
         image: goodbirdacr.azurecr.io/medicine/front:latest
+      - name: metrics
+        image: docker.io/bitnami/nginx-exporter:1.1.0-debian-11-r3
+        port: 9113
+        protocol: TCP
+        targetPort: metrics
