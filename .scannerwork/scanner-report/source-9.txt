@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 필요한 스타일 및 메타 태그 등을 포함하세요 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .application-form {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+
+    <!-- 백신 신청 페이지 내용은 여기에 있습니다. -->
+    <form class="application-form" onsubmit="submitVaccineForm(event)">
+        <h2 class="mb-4">백신 신청</h2>
+
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" class="form-control" id="name" name="userName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">나이</label>
+            <input type="number" class="form-control" id="age" name="userAge" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">주소</label>
+            <input type="text" class="form-control" id="address" name="userAddress" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">신청하기</button>
+    </form>
+    <!-- 백신 신청 페이지 내용은 여기에 있습니다. -->
+
+</div>
+
+<script>
+    const serverUrl = "http://back.metahospital.shop:80"; // 백엔드 서버 주소로 변경
+
+    async function submitVaccineForm(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const address = document.getElementById("address").value;
+
+        const vaccineData = {
+            name: name,
+            age: age,
+            address: address
+        };
+
+        try {
+            const response = await fetch(`${serverUrl}/vaccine`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(vaccineData)
+            });
+
+            if (response.ok) {
+                console.log("Vaccine application submitted successfully!");
+                // 성공 시 메시지와 함께 main.html로 리디렉션
+                alert("신청이 완료되었습니다."); // 또는 원하는 형태의 알림 사용
+                window.location.href = "main.html"; // main.html로 리디렉션
+            } else {
+                console.error("Failed to submit vaccine application.");
+                // 실패 시 에러 처리
+            }
+        } catch (error) {
+            console.error("Error submitting vaccine application:", error);
+        }
+    }
+    </script>
+
+<!-- 필요한 스크립트 및 부트스트랩 등을 포함하세요 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

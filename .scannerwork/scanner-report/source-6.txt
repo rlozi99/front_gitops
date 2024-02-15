@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 필요한 스타일 및 메타 태그 등을 포함하세요 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .application-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .application-card {
+            width: 300px;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+    <!-- 메인 페이지 내용은 여기에 있습니다. -->
+    <h1>메타 의료 시스템</h1><br><br><br><br>
+    <div class="application-list">
+        <div class="application-card">
+            <h3>백신 신청</h3>
+            <p>백신을 신청하세요!</p>
+            <a href="vaccine.html" class="btn btn-primary">신청하기</a>
+        </div>
+
+        <div class="application-card">
+            <h3>건강검진 신청</h3>
+            <p>건강검진 서비스를 신청하세요!</p>
+            <a href="health-check.html" class="btn btn-primary">신청하기</a>
+        </div>
+
+        <!-- 다른 신청 목록도 필요에 따라 추가하세요 -->
+    </div>
+
+    <!-- 메인 페이지 내용은 여기에 있습니다. -->
+</div>
+
+<!-- 필요한 스크립트 및 부트스트랩 등을 포함하세요 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

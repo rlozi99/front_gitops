@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 필요한 스타일 및 메타 태그 등을 포함하세요 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .application-form {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="text-center">
+    <!-- 백신 신청 페이지 내용은 여기에 있습니다. -->
+
+    <form class="application-form" onsubmit="submitHealthCheckForm(event)">
+        <h2 class="mb-4">건강검진 신청</h2>
+
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">나이</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="address">주소</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">신청하기</button>
+    </form>
+
+    <!-- 백신 신청 페이지 내용은 여기에 있습니다. -->
+</div>
+
+<script>
+    // 백엔드 서버 주소로 변경
+    const serverUrl = "http://back.metahospital.shop:80";
+
+    // 백신 신청 폼 제출 시 실행
+    async function submitVaccineForm(event) {
+        event.preventDefault();
+
+        // 폼 데이터 추출
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const address = document.getElementById("address").value;
+
+        const vaccineData = {
+            name: name,
+            age: age,
+            address: address
+        };
+
+        try {
+            // 백신 신청 API 호출
+            const response = await fetch(`${serverUrl}/vaccine`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(vaccineData)
+            });
+
+            // 응답 처리
+            if (response.ok) {
+                alert("백신 신청이 완료되었습니다.");
+                window.location.href = "main.html"; // main.html로 리디렉션
+            } else {
+                console.error("Failed to submit vaccine application.");
+            }
+        } catch (error) {
+            console.error("Error submitting vaccine application:", error);
+        }
+    }
+
+    // 건강검진 신청 폼 제출 시 실행
+    async function submitHealthCheckForm(event) {
+        event.preventDefault();
+
+        // 폼 데이터 추출
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const address = document.getElementById("address").value;
+
+        const healthCheckData = {
+            name: name,
+            age: age,
+            address: address
+        };
+
+        try {
+            // 건강검진 신청 API 호출
+            const response = await fetch(`${serverUrl}/health-check`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(healthCheckData)
+            });
+
+            // 응답 처리
+            if (response.ok) {
+                alert("건강검진 신청이 완료되었습니다.");
+                window.location.href = "main.html"; // main.html로 리디렉션
+            } else {
+                console.error("Failed to submit health check application.");
+            }
+        } catch (error) {
+            console.error("Error submitting health check application:", error);
+        }
+    }
+</script>
+
+<!-- 필요한 스크립트 및 부트스트랩 등을 포함하세요 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
