@@ -62,6 +62,10 @@ spec:
   metrics:
     - type: Resource
       resource:
+        requests:
+          cpu: 1m
+        limits:
+          cpu: 1000m
         name: cpu
         target:
           type: Utilization
