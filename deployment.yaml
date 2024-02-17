@@ -48,7 +48,7 @@ spec:
       - name: goodbirdacr
 
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: frontend-hpa
@@ -62,11 +62,8 @@ spec:
   metrics:
     - type: Resource
       resource:
-        requests:
-          cpu: 1m
-        limits:
-          cpu: 1000m
         name: cpu
         target:
           type: Utilization
           averageUtilization: 30
+
