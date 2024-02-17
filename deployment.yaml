@@ -27,23 +27,6 @@ spec:
         - containerPort: 9113
           name: metrics
           protocol: TCP
-        args:
-        - --nginx.scrape-uri
-        - http://127.0.0.1:8080/status
-        - --web.listen-address
-        - :9113
-        livenessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /metrics
-            port: metrics
-            scheme: HTTP
-        readinessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /metrics
-            port: metrics
-            scheme: HTTP
       imagePullSecrets:
       - name: goodbirdacr
 
