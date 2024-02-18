@@ -22,22 +22,22 @@ spec:
         image: goodbirdacr.azurecr.io/medicine/front:latest
         resources:
           requests:
-            cpu: 7m
-            memory: 5Mi     
+            cpu: 10m
+            memory: 30Mi     
           limits:
-            cpu: 7m
-            memory: 5Mi
+            cpu: 10m
+            memory: 50Mi
         ports: 
         - containerPort: 80
       - name: metrics
         image: nginx/nginx-prometheus-exporter
         resources:
           requests:
-            cpu: 7m
-            memory: 5Mi     
+            cpu: 10m
+            memory: 50Mi     
           limits:
-            cpu: 7m
-            memory: 5Mi
+            cpu: 10m
+            memory: 50Mi
         ports: 
         - containerPort: 9113
       imagePullSecrets:
