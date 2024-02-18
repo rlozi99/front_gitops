@@ -30,7 +30,7 @@ spec:
       - name: goodbirdacr
         resources:
           requests:
-            cpu:1m
+            cpu: 200m
           limits:
             cpu: 1000m
     
