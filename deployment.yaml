@@ -4,7 +4,6 @@ metadata:
   name: front-end-deployment
   namespace: front
 spec:
-  replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
@@ -29,6 +28,11 @@ spec:
           protocol: TCP
       imagePullSecrets:
       - name: goodbirdacr
+        resources:
+          requests:
+            cpu:1m
+          limits:
+            cpu: 1000m
     
 
 
