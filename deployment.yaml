@@ -4,7 +4,6 @@ metadata:
   name: front-end-deployment
   namespace: front
 spec:
-  replicas: 2
   revisionHistoryLimit: 0
   selector:
     matchLabels:
@@ -29,5 +28,20 @@ spec:
           protocol: TCP
       imagePullSecrets:
       - name: goodbirdacr
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-hpa
+  namespace: front
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: front-end-deployment
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 30
 
 
