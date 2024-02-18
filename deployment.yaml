@@ -22,10 +22,10 @@ spec:
           image: goodbirdacr.azurecr.io/medicine/front:latest
           resources:
             requests:
-              cpu: 100m
+              cpu: 10m
               memory: 50Mi     
             limits:
-              cpu: 1000m
+              cpu: 100m
               memory: 50Mi
           ports: 
             - containerPort: 80
@@ -33,10 +33,10 @@ spec:
           image: nginx/nginx-prometheus-exporter
           resources:
             requests:
-              cpu: 100m
+              cpu: 10m
               memory: 50Mi     
             limits:
-              cpu: 1000m
+              cpu: 100m
               memory: 50Mi
           ports: 
             - containerPort: 9113
@@ -63,7 +63,7 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 10
+        averageUtilization: 5
 
 
 
