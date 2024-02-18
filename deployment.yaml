@@ -22,7 +22,7 @@ spec:
         image: goodbirdacr.azurecr.io/medicine/front:latest
         resources:
           requests:
-            cpu: 200m
+            cpu: 100m
           limits:
             cpu: 1000m
       - name: metrics
@@ -35,7 +35,7 @@ spec:
       - name: goodbirdacr
         resources:
           requests:
-            cpu: 200m
+            cpu: 100m
           limits:
             cpu: 1000m
     
