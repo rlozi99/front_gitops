@@ -8,4 +8,4 @@ resources:
 images:
 - name: goodbirdacr.azurecr.io/medicine/front
   newName: goodbirdacr.azurecr.io/medicine/front
-  newTag: v1.0.Beta6
+  newTag: v1.0.Beta1
