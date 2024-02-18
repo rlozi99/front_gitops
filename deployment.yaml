@@ -28,5 +28,10 @@ spec:
           protocol: TCP
       imagePullSecrets:
       - name: goodbirdacr
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "200m"
 
 
