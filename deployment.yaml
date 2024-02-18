@@ -22,9 +22,11 @@ spec:
         image: goodbirdacr.azurecr.io/medicine/front:latest
         resources:
           requests:
-            cpu: 100m
+            cpu: 7m
+            memory: 8Mi     
           limits:
-            cpu: 1000m
+            cpu: 7m
+            memory: 8Mi
       - name: metrics
         image: nginx/nginx-prometheus-exporter
         ports: 
@@ -35,9 +37,11 @@ spec:
       - name: goodbirdacr
         resources:
           requests:
-            cpu: 100m
+            cpu: 7m
+            memory: 8Mi     
           limits:
-            cpu: 1000m
+            cpu: 7m
+            memory: 8M
     
 
 
