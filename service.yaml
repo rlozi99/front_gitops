@@ -15,5 +15,5 @@ spec:
   - name: metrics
     protocol: TCP
     port: 9113
-    targetPort: metrics
+    targetPort: 9113
   type: NodePort
