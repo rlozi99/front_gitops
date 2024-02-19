@@ -30,6 +30,9 @@ spec:
         ports: 
         - containerPort: 80
       - name: metrics
+        args:
+        - --nginx.scrape-uri
+        - http://127.0.0.1:80/metrics
         image: nginx/nginx-prometheus-exporter
         resources:
           requests:
