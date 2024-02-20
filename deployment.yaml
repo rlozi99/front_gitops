@@ -4,7 +4,6 @@ metadata:
   name: front-end-deployment
   namespace: front
 spec:
-  replicas: 2
   revisionHistoryLimit: 0
   selector:
     matchLabels:
