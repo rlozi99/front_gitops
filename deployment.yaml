@@ -47,7 +47,9 @@ spec:
       imagePullSecrets:
       - name: goodbirdacr
 
-----
+---
+
+
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
