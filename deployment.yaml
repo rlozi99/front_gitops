@@ -23,10 +23,10 @@ spec:
         resources:
           requests:
             cpu: 10m
-            memory: 30Mi     
+            memory: 100Mi     
           limits:
-            cpu: 10m
-            memory: 50Mi
+            cpu: 30m
+            memory: 500Mi
         ports: 
         - containerPort: 80
       - name: metrics
@@ -37,10 +37,10 @@ spec:
         resources:
           requests:
             cpu: 10m
-            memory: 50Mi     
+            memory: 100Mi     
           limits:
-            cpu: 10m
-            memory: 50Mi
+            cpu: 30m
+            memory: 500Mi
         ports: 
         - containerPort: 9113
       imagePullSecrets:
